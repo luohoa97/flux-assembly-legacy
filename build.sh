@@ -5,7 +5,7 @@
 # Directories
 grammar="src/lua_grammar_antlr4.g4"
 grammarpure="lua_grammar_antlr4.g4"
-output="build"
+output="parser"
 src="src"
 pwd=$(pwd)
 
@@ -27,7 +27,7 @@ fi
 # Stage 3: Move to correct dir
 
 if [ ! -d "$output" ]; then
-    echo "Build folder doesn't exist, creating it..."
+    echo "Parser folder doesn't exist, creating it..."
     mkdir "$output"
 fi
 
@@ -35,14 +35,28 @@ cp "$grammar" "$output"
 cd "$output"
 
 # Stage 4: Generate files
-antlr4 -Dlanguage=Cpp "$grammarpure"
+antlr4 -Dlanguage=Go -visitor "$grammarpure"
 
 # Stage 5: Back out
 cd "$pwd"
 
 # Stage 6: Compile
+# Compile the parser using g++
+#
+# This function takes no parameters and returns nothing.
+#
+# The compilation flags are as follows:
+#   -std=c++17: C++17 mode
+#   -I$output: Include our output directory
+#   -I/usr/include/antlr4-runtime: Include the antlr4-runtime
+#   -L/usr/lib: Link against the antlr4-runtime library
+#   -o $src/parser: Output the file to parser
+#   $src/parser.cpp: The source file
+#   $output/lua_grammar_antlr4Lexer.cpp: The lexer source file
+#   $output/lua_grammar_antlr4Parser.cpp: The parser source file
+#   -lantlr4-runtime: Link against the antlr4-runtime library
 compile() {
-    g++ -std=c++11 -I$output -I/usr/include/antlr4-runtime -L/usr/lib -o $src/parser $src/parser.cpp $output/lua_grammar_antlr4Lexer.cpp $output/lua_grammar_antlr4Parser.cpp -lantlr4-runtime
+    go build main.go
 }
 
 build() {

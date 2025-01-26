@@ -36,6 +36,11 @@ literal
 
 function_call
     : identifier '(' (expression (',' expression)*)? ')'
+    | table_insert
+    ;
+
+table_insert
+    : 'table.insert' '(' identifier ',' expression ')'
     ;
 
 function_declaration

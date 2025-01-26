@@ -1,7 +1,6 @@
-local myTable = {1, 2, 3}
-table.insert(myTable, 4)  -- comment test test
-print(myTable[4])
+local count = 10
 
---[[
-    true
-]]
+while count > 0 do
+    print(count)
+    count = count - 1
+end

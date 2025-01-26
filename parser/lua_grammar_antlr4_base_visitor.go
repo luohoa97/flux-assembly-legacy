@@ -16,6 +16,14 @@ func (v *Baselua_grammar_antlr4Visitor) VisitStatement(ctx *StatementContext) in
 	return v.VisitChildren(ctx)
 }
 
+func (v *Baselua_grammar_antlr4Visitor) VisitControl_statement(ctx *Control_statementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *Baselua_grammar_antlr4Visitor) VisitStatement_terminator(ctx *Statement_terminatorContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *Baselua_grammar_antlr4Visitor) VisitAssignment(ctx *AssignmentContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -24,11 +32,35 @@ func (v *Baselua_grammar_antlr4Visitor) VisitExpression(ctx *ExpressionContext) 
 	return v.VisitChildren(ctx)
 }
 
+func (v *Baselua_grammar_antlr4Visitor) VisitOperators(ctx *OperatorsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *Baselua_grammar_antlr4Visitor) VisitComparison_operator(ctx *Comparison_operatorContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *Baselua_grammar_antlr4Visitor) VisitArith_operator(ctx *Arith_operatorContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *Baselua_grammar_antlr4Visitor) VisitLogical_operator(ctx *Logical_operatorContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *Baselua_grammar_antlr4Visitor) VisitComment(ctx *CommentContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *Baselua_grammar_antlr4Visitor) VisitLiteral(ctx *LiteralContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
 func (v *Baselua_grammar_antlr4Visitor) VisitFunction_call(ctx *Function_callContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *Baselua_grammar_antlr4Visitor) VisitTable_insert(ctx *Table_insertContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -65,6 +97,14 @@ func (v *Baselua_grammar_antlr4Visitor) VisitTable_access(ctx *Table_accessConte
 }
 
 func (v *Baselua_grammar_antlr4Visitor) VisitMulti_line_comment(ctx *Multi_line_commentContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *Baselua_grammar_antlr4Visitor) VisitSingle_line_comment(ctx *Single_line_commentContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *Baselua_grammar_antlr4Visitor) VisitPrint_statement(ctx *Print_statementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

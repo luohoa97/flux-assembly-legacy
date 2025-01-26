@@ -14,17 +14,41 @@ type lua_grammar_antlr4Listener interface {
 	// EnterStatement is called when entering the statement production.
 	EnterStatement(c *StatementContext)
 
+	// EnterControl_statement is called when entering the control_statement production.
+	EnterControl_statement(c *Control_statementContext)
+
+	// EnterStatement_terminator is called when entering the statement_terminator production.
+	EnterStatement_terminator(c *Statement_terminatorContext)
+
 	// EnterAssignment is called when entering the assignment production.
 	EnterAssignment(c *AssignmentContext)
 
 	// EnterExpression is called when entering the expression production.
 	EnterExpression(c *ExpressionContext)
 
+	// EnterOperators is called when entering the operators production.
+	EnterOperators(c *OperatorsContext)
+
+	// EnterComparison_operator is called when entering the comparison_operator production.
+	EnterComparison_operator(c *Comparison_operatorContext)
+
+	// EnterArith_operator is called when entering the arith_operator production.
+	EnterArith_operator(c *Arith_operatorContext)
+
+	// EnterLogical_operator is called when entering the logical_operator production.
+	EnterLogical_operator(c *Logical_operatorContext)
+
+	// EnterComment is called when entering the comment production.
+	EnterComment(c *CommentContext)
+
 	// EnterLiteral is called when entering the literal production.
 	EnterLiteral(c *LiteralContext)
 
 	// EnterFunction_call is called when entering the function_call production.
 	EnterFunction_call(c *Function_callContext)
+
+	// EnterTable_insert is called when entering the table_insert production.
+	EnterTable_insert(c *Table_insertContext)
 
 	// EnterFunction_declaration is called when entering the function_declaration production.
 	EnterFunction_declaration(c *Function_declarationContext)
@@ -53,6 +77,12 @@ type lua_grammar_antlr4Listener interface {
 	// EnterMulti_line_comment is called when entering the multi_line_comment production.
 	EnterMulti_line_comment(c *Multi_line_commentContext)
 
+	// EnterSingle_line_comment is called when entering the single_line_comment production.
+	EnterSingle_line_comment(c *Single_line_commentContext)
+
+	// EnterPrint_statement is called when entering the print_statement production.
+	EnterPrint_statement(c *Print_statementContext)
+
 	// EnterIdentifier is called when entering the identifier production.
 	EnterIdentifier(c *IdentifierContext)
 
@@ -62,17 +92,41 @@ type lua_grammar_antlr4Listener interface {
 	// ExitStatement is called when exiting the statement production.
 	ExitStatement(c *StatementContext)
 
+	// ExitControl_statement is called when exiting the control_statement production.
+	ExitControl_statement(c *Control_statementContext)
+
+	// ExitStatement_terminator is called when exiting the statement_terminator production.
+	ExitStatement_terminator(c *Statement_terminatorContext)
+
 	// ExitAssignment is called when exiting the assignment production.
 	ExitAssignment(c *AssignmentContext)
 
 	// ExitExpression is called when exiting the expression production.
 	ExitExpression(c *ExpressionContext)
 
+	// ExitOperators is called when exiting the operators production.
+	ExitOperators(c *OperatorsContext)
+
+	// ExitComparison_operator is called when exiting the comparison_operator production.
+	ExitComparison_operator(c *Comparison_operatorContext)
+
+	// ExitArith_operator is called when exiting the arith_operator production.
+	ExitArith_operator(c *Arith_operatorContext)
+
+	// ExitLogical_operator is called when exiting the logical_operator production.
+	ExitLogical_operator(c *Logical_operatorContext)
+
+	// ExitComment is called when exiting the comment production.
+	ExitComment(c *CommentContext)
+
 	// ExitLiteral is called when exiting the literal production.
 	ExitLiteral(c *LiteralContext)
 
 	// ExitFunction_call is called when exiting the function_call production.
 	ExitFunction_call(c *Function_callContext)
+
+	// ExitTable_insert is called when exiting the table_insert production.
+	ExitTable_insert(c *Table_insertContext)
 
 	// ExitFunction_declaration is called when exiting the function_declaration production.
 	ExitFunction_declaration(c *Function_declarationContext)
@@ -100,6 +154,12 @@ type lua_grammar_antlr4Listener interface {
 
 	// ExitMulti_line_comment is called when exiting the multi_line_comment production.
 	ExitMulti_line_comment(c *Multi_line_commentContext)
+
+	// ExitSingle_line_comment is called when exiting the single_line_comment production.
+	ExitSingle_line_comment(c *Single_line_commentContext)
+
+	// ExitPrint_statement is called when exiting the print_statement production.
+	ExitPrint_statement(c *Print_statementContext)
 
 	// ExitIdentifier is called when exiting the identifier production.
 	ExitIdentifier(c *IdentifierContext)

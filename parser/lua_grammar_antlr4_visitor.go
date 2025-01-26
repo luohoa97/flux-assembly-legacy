@@ -14,17 +14,41 @@ type lua_grammar_antlr4Visitor interface {
 	// Visit a parse tree produced by lua_grammar_antlr4Parser#statement.
 	VisitStatement(ctx *StatementContext) interface{}
 
+	// Visit a parse tree produced by lua_grammar_antlr4Parser#control_statement.
+	VisitControl_statement(ctx *Control_statementContext) interface{}
+
+	// Visit a parse tree produced by lua_grammar_antlr4Parser#statement_terminator.
+	VisitStatement_terminator(ctx *Statement_terminatorContext) interface{}
+
 	// Visit a parse tree produced by lua_grammar_antlr4Parser#assignment.
 	VisitAssignment(ctx *AssignmentContext) interface{}
 
 	// Visit a parse tree produced by lua_grammar_antlr4Parser#expression.
 	VisitExpression(ctx *ExpressionContext) interface{}
 
+	// Visit a parse tree produced by lua_grammar_antlr4Parser#operators.
+	VisitOperators(ctx *OperatorsContext) interface{}
+
+	// Visit a parse tree produced by lua_grammar_antlr4Parser#comparison_operator.
+	VisitComparison_operator(ctx *Comparison_operatorContext) interface{}
+
+	// Visit a parse tree produced by lua_grammar_antlr4Parser#arith_operator.
+	VisitArith_operator(ctx *Arith_operatorContext) interface{}
+
+	// Visit a parse tree produced by lua_grammar_antlr4Parser#logical_operator.
+	VisitLogical_operator(ctx *Logical_operatorContext) interface{}
+
+	// Visit a parse tree produced by lua_grammar_antlr4Parser#comment.
+	VisitComment(ctx *CommentContext) interface{}
+
 	// Visit a parse tree produced by lua_grammar_antlr4Parser#literal.
 	VisitLiteral(ctx *LiteralContext) interface{}
 
 	// Visit a parse tree produced by lua_grammar_antlr4Parser#function_call.
 	VisitFunction_call(ctx *Function_callContext) interface{}
+
+	// Visit a parse tree produced by lua_grammar_antlr4Parser#table_insert.
+	VisitTable_insert(ctx *Table_insertContext) interface{}
 
 	// Visit a parse tree produced by lua_grammar_antlr4Parser#function_declaration.
 	VisitFunction_declaration(ctx *Function_declarationContext) interface{}
@@ -52,6 +76,12 @@ type lua_grammar_antlr4Visitor interface {
 
 	// Visit a parse tree produced by lua_grammar_antlr4Parser#multi_line_comment.
 	VisitMulti_line_comment(ctx *Multi_line_commentContext) interface{}
+
+	// Visit a parse tree produced by lua_grammar_antlr4Parser#single_line_comment.
+	VisitSingle_line_comment(ctx *Single_line_commentContext) interface{}
+
+	// Visit a parse tree produced by lua_grammar_antlr4Parser#print_statement.
+	VisitPrint_statement(ctx *Print_statementContext) interface{}
 
 	// Visit a parse tree produced by lua_grammar_antlr4Parser#identifier.
 	VisitIdentifier(ctx *IdentifierContext) interface{}
